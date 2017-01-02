@@ -23,13 +23,21 @@ public:
 								FActorComponentTickFunction* ThisTickFunction ) override;
 
 	void OpenDoor();
+	void CloseDoor();
 
 private:
 	UPROPERTY(VisibleAnywhere)
-	float OpenAngle = 90.f;
+	float _OpenAngle = -90.f;
 
 	UPROPERTY(EditAnywhere)
-	ATriggerVolume* PressurePlate;
+	ATriggerVolume* _PressurePlate;
 
-	AActor* ActorThatOpens;
+	UPROPERTY(EditAnywhere)
+	float _DoorCloseDelay = 1.f;
+
+	float _LastDoorOpenTime;
+
+	AActor* _ActorThatOpens;
+
+	AActor* _Owner;
 };
