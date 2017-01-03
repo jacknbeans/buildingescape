@@ -26,7 +26,7 @@ public:
 	void CloseDoor();
 
 private:
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(EditAnywhere)
 	float _OpenAngle = -90.f;
 
 	UPROPERTY(EditAnywhere)
